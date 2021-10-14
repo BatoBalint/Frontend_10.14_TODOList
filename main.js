@@ -1,5 +1,6 @@
 var input = document.getElementById('todoInput');
 var list = document.getElementById('list');
+var searchInput = document.getElementById('searchInput');
 
 function AddElement() {
   if (input.value.trim() !== '') {
@@ -76,6 +77,30 @@ function DeleteAll() {
     }
   } else {
 
+  }
+}
+
+function Search() {
+  if (searchInput.value.trim() !== '') {
+    removeSearchHide();
+    let li = list.childNodes;
+    for (var i = 1; i < li.length; i++) {
+      let text = li[i].childNodes[0].childNodes[1].innerHTML.toLowerCase();
+      if (!text.includes(searchInput.value.trim().toLowerCase())) {
+        li[i].classList.add('searchHide');
+      }
+    }
+  } else {
+    removeSearchHide();
+  }
+}
+
+function removeSearchHide() {
+  let li = list.childNodes;
+  for (let i = 1; i < li.length; i++) {
+    if (li[i].classList.contains('searchHide')) {
+      li[i].classList.remove('searchHide');
+    }
   }
 }
 
