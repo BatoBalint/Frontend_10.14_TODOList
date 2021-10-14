@@ -1,0 +1,23 @@
+li div * {
+  display: inline-block;
+}
+
+.floatRight {
+  float: right;
+}
+
+.listItemDiv p {
+  margin-left: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.done p:first-of-type {
+  text-decoration: line-through;
+}
+
+.hide {
+  display: none;
+}
